@@ -25,7 +25,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.corejava.practice.utils.Log;
+import com.problems.utils.Log;
 
 public class SortMapByValue {
 

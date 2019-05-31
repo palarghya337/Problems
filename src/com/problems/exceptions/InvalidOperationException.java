@@ -1,4 +1,4 @@
-package com.corejava.practice.exceptions;
+package com.problems.exceptions;
 
 public class InvalidOperationException extends RuntimeException{
 

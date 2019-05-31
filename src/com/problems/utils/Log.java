@@ -1,10 +1,10 @@
-package com.corejava.practice.utils;
+package com.problems.utils;
 
 import java.text.MessageFormat;
 import java.util.Objects;
 import java.util.logging.Logger;
 
-import com.corejava.practice.exceptions.InvalidOperationException;
+import com.problems.exceptions.InvalidOperationException;
 
 public final class Log {
 
