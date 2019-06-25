@@ -1,7 +1,8 @@
-package com.java8.practice.problems;
+package com.problems.java;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
+
+import com.problems.utils.Log;
 
 /**
  * Given a  2D Array, : <br>
@@ -86,8 +87,8 @@ public class HourGlassProblem {
 	public static void main(String... string) {
 		int arr[][] = {{-9,-9,-9,1,1,1},{0,-9,0,4,3,2},{-9,-9,-9,1,2,3},{0,0,8,6,6,0},{0,0,0,-2,0,0},{0,0,1,2,4,0}};
 		int arr2[][] = {{1,1,1,0,0,0},{0,1,0,0,0,0},{1,1,1,0,0,0},{0,0,2,4,4,0},{0,0,0,2,0,0},{0,0,1,2,4,0}};
-		System.out.println("Heighest Number: " + solveProblem(arr));
-		System.out.println("Heighest Number: " + solveProblem(arr2));
+		Log.logInfo("Heighest Number: " + solveProblem(arr));
+		Log.logInfo("Heighest Number: " + solveProblem(arr2));
 	}
 	private static int solveProblem(int arr[][]) {
 		int resultLength = (arr.length -2)*(arr.length -2);
@@ -98,7 +99,7 @@ public class HourGlassProblem {
 				result[resultCount++] = hourGlassSum(arr, i, j);
 			}
 		}
-		System.out.println(Arrays.toString(result));
+		Log.logInfo(Arrays.toString(result));
 		return Arrays.stream(result).max().getAsInt();
 	}
 	private static int hourGlassSum(int[][] arr, int i, int j) {

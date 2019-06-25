@@ -1,18 +1,20 @@
-package com.java8.practice.problems;
+package com.problems.java;
 
 import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.IntStream;
+
+import com.problems.utils.Log;
 
 public class NumberShifting {
 
 	public static void main(String[] args) {
 		Random random = new Random();
 		int[] processNames = random.ints(0, 20).distinct().limit(10).toArray();
-		System.out.println("Before Rearrange: " + Arrays.toString(processNames));
+		Log.logInfo("Before Rearrange: " + Arrays.toString(processNames));
 		int indexOfProcess = 5;
 		int[] rearrangedProcess = rearrangeProcess(processNames.length, indexOfProcess, processNames);
-		System.out.println("After Rearrange: " + Arrays.toString(rearrangedProcess));
+		Log.logInfo("After Rearrange: " + Arrays.toString(rearrangedProcess));
 	}
 	
 	private static int[] rearrangeProcess(int numberOfProcess, int indexOfProcess, int[] processNames) {

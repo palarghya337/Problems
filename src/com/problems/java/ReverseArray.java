@@ -1,12 +1,24 @@
-package com.java8.practice.problems;
+package com.problems.java;
 
 import java.util.Arrays;
+import java.util.Scanner;
+
+import com.problems.utils.Log;
 
 public class ReverseArray {
 
 	public static void main(String...strings) {
-		int arr[] = {1,4,3,2};
-		System.out.println(Arrays.toString(reverseArray(arr)));
+	  
+		try (Scanner scan = new Scanner(System.in)) {
+		  
+		  Log.logInfo("Enter data for array separated by comma('','')");
+		  String arrayDataInString = scan.nextLine();
+		  String[] arrayData = arrayDataInString.split(",");
+		  int[] array = Arrays.stream(arrayData).mapToInt(Integer::parseInt).toArray();
+		  Log.logInfo(Arrays.toString(reverseArray(array)));
+		} catch (NumberFormatException e) {
+		  Log.logInfo("Can not able to proceed further as you did not enter number.");
+		}
 	}
 
 	private static int[] reverseArray(int[] arr) {

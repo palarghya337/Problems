@@ -1,41 +1,39 @@
-package com.java8.practice.problems;
+package com.problems.java;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.MessageFormat;
 
-import com.java8.practice.exception.InvalidOperationException;
+import com.problems.exceptions.InvalidOperationException;
+import com.problems.utils.Log;
 
 public class Problem1 {
 
 	public static void main(String... args) {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		try {
-			System.out.print("Enter string length and execution time by single space.");
+		  Log.logInfo("Enter string length and execution time by single space.");
 			String lenthAndExecution = reader.readLine();
-			System.out.println();
 			if (lenthAndExecution != null) {
 				
 				String[] lengthAndExecutionArr = lenthAndExecution.trim().split(" ");
 				int stringLength = Integer.parseInt(lengthAndExecutionArr[0]);
 				int executionTime = Integer.parseInt(lengthAndExecutionArr[1]);
-				System.out.print("Enter input string: ");
+				Log.logInfo("Enter input string: ");
 				String inputString = reader.readLine();
-				System.out.println();
 				if (stringLength != inputString.length()) {
 					throw new InvalidOperationException("String length does not match");
 				}
 				inputStartEndIndex(reader, executionTime, inputString);
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+		  Log.logInfo("Exception caught: {0}", e);
 		}
 	}
 
 	private static void inputStartEndIndex(BufferedReader reader, int executionTime, String inputString)
 			throws IOException {
-		System.out.println("Enter substring start and end index with space: ");
+	  Log.logInfo("Enter substring start and end index with space: ");
 		for (int i = 0; i < executionTime; i++) {
 			
 			String startAndEndIndex = reader.readLine();
@@ -46,7 +44,6 @@ public class Problem1 {
 			int startIndex = Integer.parseInt(startAndEndIndexArr[0]);
 			int endIndex = Integer.parseInt(startAndEndIndexArr[1]);
 			solveTheProblem(inputString, startIndex, endIndex);
-			System.out.println();
 		}
 	}
 
@@ -55,10 +52,10 @@ public class Problem1 {
 		int count = 0;
 		String subString = inputString.substring(startIndex-1, endIndex);
 		if (startIndex == endIndex) {
-			System.out.println("Count: 1");
+		  Log.logInfo("Count: 1");
 			return;
 		}
-		System.out.println(MessageFormat.format("SubString {0} Length: {1}", subString, subString.length()));
+		Log.logInfo("SubString {0} Length: {1}", subString, subString.length());
 		for (int i = subString.length() - 1; i >= 0; i--) {
 			for (int j = 0; j <= i; j++) {
 				if (subString.charAt(j) == subString.charAt(i)) {
@@ -66,6 +63,6 @@ public class Problem1 {
 				}
 			}
 		}
-		System.out.println("Count: " + count);
+		Log.logInfo("Count: " + count);
 	}
 }

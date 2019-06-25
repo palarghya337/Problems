@@ -1,6 +1,6 @@
-package com.java8.practice.problems;
+package com.problems.java;
 
-import com.java8.practice.utils.Log;
+import com.problems.utils.Log;
 
 public class NewYearChaos {
 

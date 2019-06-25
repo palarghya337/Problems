@@ -1,6 +1,8 @@
-package com.java8.practice.problems;
+package com.problems.java;
 
 import java.util.stream.IntStream;
+
+import com.problems.utils.Log;
 
 public class InfixToPrefix {
 
@@ -36,7 +38,7 @@ public class InfixToPrefix {
 			}
 			int index = operatorCount - 1;
 			IntStream.rangeClosed(0, index).map(i -> index - i).forEach(i -> variableStack.append(operatorStack[i]));
-			System.out.println(variableStack.toString());
+			Log.logInfo(variableStack.toString());
 		}
 	}
 
