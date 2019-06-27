@@ -1,4 +1,4 @@
-package com.problems.java;
+package com.problems.hackerrank;
 
 import java.util.Arrays;
 
@@ -99,7 +99,7 @@ public class HourGlassProblem {
 				result[resultCount++] = hourGlassSum(arr, i, j);
 			}
 		}
-		Log.logInfo(Arrays.toString(result));
+		Log.logInfo("Sum of sub arrays: {0}", Arrays.toString(result));
 		return Arrays.stream(result).max().getAsInt();
 	}
 	private static int hourGlassSum(int[][] arr, int i, int j) {

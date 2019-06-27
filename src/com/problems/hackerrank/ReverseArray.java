@@ -1,4 +1,4 @@
-package com.problems.java;
+package com.problems.hackerrank;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -17,7 +17,7 @@ public class ReverseArray {
 		  int[] array = Arrays.stream(arrayData).mapToInt(Integer::parseInt).toArray();
 		  Log.logInfo(Arrays.toString(reverseArray(array)));
 		} catch (NumberFormatException e) {
-		  Log.logInfo("Can not able to proceed further as you did not enter number.");
+		  Log.logInfo("Exception: {0}", e.getMessage());
 		}
 	}
 

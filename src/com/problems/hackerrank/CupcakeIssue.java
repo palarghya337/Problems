@@ -1,4 +1,4 @@
-package com.problems.java;
+package com.problems.hackerrank;
 
 import com.problems.utils.Log;
 

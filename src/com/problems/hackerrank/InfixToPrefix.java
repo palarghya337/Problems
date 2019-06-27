@@ -1,4 +1,4 @@
-package com.problems.java;
+package com.problems.hackerrank;
 
 import java.util.stream.IntStream;
 

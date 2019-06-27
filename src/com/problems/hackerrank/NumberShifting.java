@@ -1,8 +1,10 @@
-package com.problems.java;
+package com.problems.hackerrank;
 
 import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.IntStream;
+
+import javax.management.openmbean.InvalidOpenTypeException;
 
 import com.problems.utils.Log;
 
@@ -28,8 +30,8 @@ public class NumberShifting {
 			.forEach(i -> processNames[i] = processNames[i-1]);
 			
 			processNames[0] = temp;
-		} else if (numberOfProcess < indexOfProcess) {
-			throw new RuntimeException("It is not possible");
+		} else {
+			throw new InvalidOpenTypeException("Not Able to find the index.");
 		}
 		return processNames;
 	}
