@@ -1,4 +1,4 @@
-package com.problems.hackerearth;
+package com.problems.hackerearth.basicprogramming.inputoutput.veryeasy;
 
 import java.util.Scanner;
 
