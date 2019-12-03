@@ -11,7 +11,7 @@ import com.problems.utils.Log;
  * identical, if any of the permutation of string S1 is equal to the
  * string S2. See Sample explanation for more details.
  * <p> Input :<br>
- * First line, contains an intger 'T' denoting no. of test cases.
+ * First line, contains an integer 'T' denoting no. of test cases.
  * Each test consists of a single line, containing two space
  * separated strings S1 and S2 of equal length.</p>
  * Output:<br>
