@@ -17,6 +17,9 @@ public class ArraySubsetOfAnotherArray {
 		System.out.println(isSubArray);
 	}
 	/**
+	 * This method will return false if size of sub array is
+	 * more than size of main array.
+	 *  
 	 * This method will take time O(n log n) where
 	 * n is the large array size.
 	 * @param mainArray
