@@ -1,18 +1,53 @@
 package com.problems.amazon;
 
+import java.util.Arrays;
+
 public class ArraySubsetOfAnotherArray {
 
 	public static void main(String[] args) {
 		
-		int[] firstArray = {1,4,4,2};
-		int[] secondArray = {1,4,4};
-		/*
-		firstArray = new int[] {1,6,5};
-		secondArray = new int[] {1,4,7,3,5,6};
-		*/
+		int[] mainArray = {1,4,4,2};
+		int[] subArray = {1,4,2,4,2};
+		
+		mainArray = new int[] {1,4,7,3,5,6};
+		subArray = new int[] {6,5,4};
+		
 		boolean isSubArray = new ArraySubsetOfAnotherArray()
-				.isSubsetArray(firstArray, secondArray);
+				.isSubsetArray2(mainArray, subArray);
 		System.out.println(isSubArray);
+	}
+	/**
+	 * This method will take time O(n log n) where
+	 * n is the large array size.
+	 * @param mainArray
+	 * @param subArray
+	 * @return boolean
+	 */
+	public boolean isSubsetArray2(int[] mainArray,
+			int[] subArray) {
+		
+		if (mainArray == null || subArray == null) {
+			return false;
+		}
+		int mainArraySize = mainArray.length;
+		int subArraySize = subArray.length;
+		if (mainArraySize >= subArraySize) {
+			
+			// O(n log n)
+			Arrays.sort(mainArray);
+			// O (subArraySize log mainArraySize)
+			for (int i = 0; i < subArraySize; i++) {
+				
+				int key = subArray[i];
+				// O (log mainArraySize)
+				int found = Arrays.binarySearch(mainArray, key);
+				if (found == -1) {
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
 	}
 	/**
 	 * Method to check whether an array is a subset of another
