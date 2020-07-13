@@ -4,18 +4,18 @@ public class ValidParentheses {
 
 	public static void main(String[] args) {
 		
-		String strg = "{}";
+		String strg = "{{{{}}}}";
 		boolean isValidParentheses = isValidParentheses(strg);
 		System.out.println(isValidParentheses);
 	}
 
 	private static boolean isValidParentheses(String strg) {
 		
+		int length = 0;
 		// returning false if string is null
-		if (strg == null) {
+		if (strg == null || (length = strg.length()) < 2) {
 			return false;
 		}
-		int length = strg.length();
 		int stackIndex = -1;
 		char[] stack = new char[length];
 		for (int i = 0; i < length; i++) {
@@ -46,18 +46,11 @@ public class ValidParentheses {
 				 * then return false otherwise don't do anything.
 				 **/
 				char stackPopedItem = stack[stackIndex--];
-				if (current == ')') {
-					if (stackPopedItem != '(') {
-						return false;
-					}
-				} else if (current == '}') {
-					if (stackPopedItem != '{') {
-						return false;
-					}
-				} else if (current == ']') {
-					if (stackPopedItem != '[') {
-						return false;
-					}
+				if ((current == ')' && stackPopedItem != '(')
+						|| (current == '}' && stackPopedItem != '{')
+						|| (current == ']' && stackPopedItem != '[')) {
+
+					return false;
 				}
 			}
 		}
